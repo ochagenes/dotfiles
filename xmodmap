@@ -1,0 +1,62 @@
+! mod2 is Num_Lock,  mod5 is Scroll_Lock
+! We put mod1 = Meta and mod4 = Alt.
+! mod3 is unused.
+
+!    clear mod1
+!    clear mod3
+!    clear mod4
+
+
+!---------------------------------------------------------
+! CapsLock used as Esc instead, So i vim faster :-).
+
+    clear lock
+    keycode 66 = Escape
+
+!---------------------------------------------------------
+!  AltGr key (113) used as compose key
+
+    keycode 108 = Mode_switch
+
+!---------------------------------------------------------
+! 115 = left Windows Key is Meta, mod1
+
+!    keycode 115 = Meta_L            
+!    add mod1 = Meta_L
+
+!---------------------------------------------------------
+! 116 = right windows Key is also Meta. also mod1
+    
+!    keycode 116 = Meta_R
+!    add mod1 = Meta_R
+
+!---------------------------------------------------------
+! 64 = Left Alt Key is Alt, also mod1
+
+!   keycode 64 = Alt_L
+    add mod1 = Alt_L
+
+!---------------------------------------------------------
+! 113 = Alt_R  116 = Windows_R  117 = Menu
+!
+!    keycode 113 = bracketleft braceleft
+!    keycode 116 =  bracketright braceright   
+!    keycode 117 = semicolon colon 
+!
+!---------------------------------------------------------
+! 35 = bracketright  47 = semicolon  
+! 34 = bracketleft   48 = apostrophe 
+! רזו keys obtained with Mode_shift ( = alt_gr key )
+! also adds " and ` to the bracketright button.
+
+    keycode 35 = bracketright braceright dead_diaeresis dead_grave 
+    keycode 47 = semicolon colon oslash Ooblique
+    keycode 48 = apostrophe at ae AE
+    keycode 34 = bracketleft braceleft aring Aring 
+
+! Who knows, this is actually needed... :P
+    keycode 56 = b
+!---------------------------------------------------------
+!
+!	keycode 115 = Meta_R
+	add mod4 = Super_L

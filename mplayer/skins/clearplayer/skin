@@ -1,0 +1,39 @@
+section = movieplayer
+
+ window = main
+
+  decoration = enable
+  base       = main, 0, 0
+
+  button     = button_prev,      2,  48, 39,  42, evPrev
+  button     = button_rewind,   38,  48, 39,  42, evBackward10sec
+  button     = button_pause,    74,  48, 39,  42, evPause
+  button     = button_play,    110,  48, 39,  42, evPlay
+  button     = button_stop,    146,  48, 39,  42, evStop
+  button     = button_forward, 182,  48, 39,  42, evForward10sec
+  button     = button_next,    218,  48, 39,  42, evNext
+  button     = button_load,    254,  48, 39,  42, evLoad
+
+  button     = mute,           304,  62, 10,  17, evMute
+
+  potmeter   = waves, 11,  0,  315,  63,  6,  14, evSetVolume
+
+  hpotmeter  = pos,   27, 15, NULL, 100,  0,  40, 30, 336, 15, evSetMoviePosition
+  hpotmeter  = vol,   18, 14, NULL, 100,  0, 331, 64,  45, 14, evSetVolume
+
+  font       = font, font
+
+  dlabel     = 6, 10, 367, 0, font, "$o "
+  dlabel     = 6, 31,  40, 0, font, "Time:"
+  dlabel     = 6, 98, 152, 0, font, "$1 / $6"
+
+ end
+
+ window      = sub
+
+  base       = sub,  -1,  -1
+  background = 246, 246, 246
+
+ end
+
+end
