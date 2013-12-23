@@ -1,5 +1,5 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 
 "general stuff
@@ -14,6 +14,8 @@ set noexpandtab
 set noerrorbells
 set number
 syntax on
+filetype on
+filetype plugin indent on
 " colorscheme torte
 hi StatusLine ctermfg=0 ctermbg=7 gui=bold,reverse
 
@@ -72,10 +74,12 @@ nnoremap <silent> <F2> :TagExplorer<CR>
 nnoremap <silent> <F3> :w<CR>:make clean<CR>:make<CR>
 " Execute ./test
 nnoremap <silent> <F4> :!./test<CR>
-" Comment out lines with F5
-nnoremap <silent> <F5> 0i/*<ESC>$a*/<ESC>
+" Comment out lines with F5, PEP8 uses F5 
+"nnoremap <silent> <F5> 0i/*<ESC>$a*/<ESC>
 " Insert comments with F6
 nnoremap <silent> <F6> A /*  */<esc>hhha
+" \t is taken by CommantT
+nnoremap <leader>v <Plug>TaskList
 
 " Only display certain file-types in tagexplorer
 " let TE_Include_File_Pattern = '.*\.c$\|.*\.h$\|.*\cc$\|.*\cpp$\|Makefile$\|.*\.py$\|.*\.asm$\|.*\.s$\|.*\.sh$\|.*\.pl$\|.*\.pas$'
