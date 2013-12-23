@@ -1,3 +1,7 @@
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "general stuff
 set nocompatible
 set bs=2
@@ -29,7 +33,7 @@ set lazyredraw
 
 " folding (:help folding)
 set foldenable
-set foldmethod=manual
+set foldmethod=indent
 
 " remap F1 to ": help "
 nnoremap <F1> <ESC>:help 
