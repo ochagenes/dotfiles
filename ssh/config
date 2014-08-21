@@ -1,7 +1,7 @@
 host *
 ControlMaster auto
-ControlPath /home/ochagenes/.ssh/%r@%h:%p
-user ochagenes
+ControlPath ~/.ssh/%r@%h:%p
+#user ochagenes
 
 Host gw
 Hostname gw.hagenes-it.lan
@@ -11,3 +11,12 @@ User vi-admin
 
 Host blaaman.get
 ForwardX11 yes
+
+Host ulrik.uio.no
+User ochagene
+
+host ssh.uio.no
+user ochagene
+
+host nl.wibla.net
+user ochagenes

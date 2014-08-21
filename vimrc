@@ -1,5 +1,5 @@
 filetype off
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
 "general stuff
