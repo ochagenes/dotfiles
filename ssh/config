@@ -12,22 +12,10 @@ User vi-admin
 Host blaaman.get
 ForwardX11 yes
 
-Host ulrik.uio.no
-User ochagene
-
-host ssh.uio.no
-user ochagene
-
 host nl.wibla.net
 user ochagenes
 
-host login
-user ochagene
-
-host login.uio.no
-user ochagene
-
-host login.ifi.uio.no
+host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no
 user ochagene
 
 host get.ole-k.net
