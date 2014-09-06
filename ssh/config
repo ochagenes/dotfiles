@@ -1,0 +1,34 @@
+host *
+ControlMaster auto
+ControlPath ~/.ssh/%r@%h:%p
+#user ochagenes
+
+Host gw
+Hostname gw.hagenes-it.lan
+
+Host 10.50.50.10
+User vi-admin
+
+Host blaaman.get
+ForwardX11 yes
+
+Host ulrik.uio.no
+User ochagene
+
+host ssh.uio.no
+user ochagene
+
+host nl.wibla.net
+user ochagenes
+
+host login
+user ochagene
+
+host login.uio.no
+user ochagene
+
+host login.ifi.uio.no
+user ochagene
+
+host get.ole-k.net
+user ochagenes
