@@ -10,3 +10,15 @@ User vi-admin
 
 Host blaaman.get
 ForwardX11 yes
+
+host login
+user ochagene
+
+host login.uio.no
+user ochagene
+
+host login.ifi.uio.no
+user ochagene
+
+host get.ole-k.net
+user ochagenes
