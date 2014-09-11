@@ -36,6 +36,7 @@ set lazyredraw
 " folding (:help folding)
 set foldenable
 set foldmethod=indent
+set foldlevelstart=99
 
 " remap F1 to ": help "
 nnoremap <F1> <ESC>:help 
