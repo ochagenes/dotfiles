@@ -3,7 +3,7 @@ git submodule add https://github.com/msanders/snipmate.vim.git bundle/snipmate
 git submodule add https://github.com/tpope/vim-surround.git bundle/surround
 git submodule add https://github.com/tpope/vim-git.git bundle/git
 gsit submodule add https://github.com/ervandew/supertab.git bundle/supertab
-git submodule add https://github.com/sontek/minibufexpl.vim.git bundle/minibufexpl
+git submodule add https://github.com/fholgado/minibufexpl.vim.git bundle/minibufexpl
 git submodule add https://github.com/wincent/Command-T.git bundle/command-t
 git submodule add https://github.com/mitechie/pyflakes-pathogen.git
 git submodule add https://github.com/mileszs/ack.vim.git bundle/ack
