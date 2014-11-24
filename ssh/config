@@ -17,6 +17,8 @@ user ochagenes
 
 host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no
 user ochagene
+ForwardX11 yes
 
 host get.ole-k.net
 user ochagenes
+ForwardX11 yes
