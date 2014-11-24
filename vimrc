@@ -19,6 +19,21 @@ filetype plugin indent on
 " colorscheme torte
 hi StatusLine ctermfg=0 ctermbg=7 gui=bold,reverse
 
+set statusline=%t       "tail of the filename
+"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+"set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%{fugitive#statusline()}
+set statusline+=%=      "left/right separator
+set statusline+=%l,   "cursor line/total lines
+set statusline+=%c%V     "cursor column
+set statusline+=\ %P    "percent through file
+"set statusline+=%-12.(%l,%c%V%)\ %<%P        " offset
+"set statusline+=%{fugitive#statusline()}
+
 " now set it up to change the status line based on mode
 "if version >= 700
 "  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
