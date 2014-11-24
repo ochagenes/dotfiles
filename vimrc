@@ -17,7 +17,6 @@ syntax on
 filetype on
 filetype plugin indent on
 " colorscheme torte
-hi StatusLine ctermfg=0 ctermbg=7 gui=bold,reverse
 
 set statusline=%t       "tail of the filename
 "set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -34,11 +33,12 @@ set statusline+=\ %P    "percent through file
 "set statusline+=%-12.(%l,%c%V%)\ %<%P        " offset
 "set statusline+=%{fugitive#statusline()}
 
+hi StatusLine ctermfg=0 ctermbg=7 gui=bold,reverse
 " now set it up to change the status line based on mode
-"if version >= 700
-"  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-"  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=7 gui=bold,reverse
-"endif
+if version >= 700
+  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=7 gui=bold,reverse
+endif
 
 " indenting
 set ai
