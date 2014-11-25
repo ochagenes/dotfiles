@@ -16,7 +16,8 @@ set number
 syntax on
 filetype on
 filetype plugin indent on
-" colorscheme torte
+"colorscheme torte
+colorscheme molokai
 
 set statusline=%t       "tail of the filename
 "set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
@@ -210,4 +211,8 @@ cab sp Sp
 
 :imap <C-l> <ESC>:exec "normal f" . leavechar<CR>a
 
+set list
+set lcs=tab:│\ ,trail:·,extends:>,precedes:<,nbsp:&
+"set lcs=tab:└─,trail:·,extends:>,precedes:<,nbsp:&
+"set lcs=tab:│┈,trail:·,extends:>,precedes:<,nbsp:&
 
