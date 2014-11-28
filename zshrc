@@ -1,6 +1,9 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+if [[ -d /snacks/bin ]] ; then
+	path=(/snacks/bin $path)
+fi
 alias ls='ls --color=auto'
 bindkey -e
 autoload -Uz compinit promptinit colors
