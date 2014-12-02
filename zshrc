@@ -1,6 +1,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+EDITOR=vim
 if [[ -d /snacks/bin ]] ; then
 	path=(/snacks/bin $path)
 fi
