@@ -10,6 +10,8 @@ autoload -Uz compinit promptinit colors
 compinit && promptinit && colors
 PROMPT="%{$fg[blue]%}%m %{$reset_color%}%1~%# "
 RPROMPT="%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
+PRINTER="futura"
+PATH=/snacks/bin:$PATH
 _force_rehash() {
 	  (( CURRENT == 1 )) && rehash
 		    return 1000 # Because we didn't really complete anything
@@ -27,3 +29,4 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' users ochagene
