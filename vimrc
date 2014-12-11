@@ -17,7 +17,9 @@ syntax on
 filetype on
 filetype plugin indent on
 "colorscheme torte
-colorscheme molokai
+"colorscheme molokai
+set background=dark
+colorscheme solarized
 
 set statusline=%t       "tail of the filename
 "set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
