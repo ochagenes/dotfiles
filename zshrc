@@ -5,6 +5,9 @@ EDITOR=vim
 if [[ -d /snacks/bin ]] ; then
 	path=(/snacks/bin $path)
 fi
+if [[ -f ~/dotfiles/256term.sh ]] ; then
+	emulate sh -c 'source ~/dotfiles/256term.sh'
+fi
 alias ls='ls --color=auto'
 bindkey -e
 autoload -Uz compinit promptinit colors
