@@ -2,55 +2,55 @@
 !XTerm*charClass: 33:48,37:48,43:48,45-47:48,64:48,126:48,95:48
 !XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,58:48,64:48,95:48,126:48,35:48
 !black
-#XTerm*color0:   rgb:00/00/00
-#XTerm*color8:   rgb:60/60/60
+XTerm*color0:   rgb:00/00/00
+XTerm*color8:   rgb:60/60/60
 !red
-#XTerm*color1:   rgb:a7/82/71
-#XTerm*color9:   rgb:87/62/51
+XTerm*color1:   rgb:a7/82/71
+XTerm*color9:   rgb:87/62/51
 !green
-#XTerm*color2:   rgb:a3/bc/8d
-#XTerm*color10:  rgb:6b/7c/5d
+XTerm*color2:   rgb:a3/bc/8d
+XTerm*color10:  rgb:6b/7c/5d
 !yellow
-#XTerm*color3:   rgb:80/80/50
-#XTerm*color11:  rgb:a0/a0/70
+XTerm*color3:   rgb:80/80/50
+XTerm*color11:  rgb:a0/a0/70
 !blue
-#XTerm*color4:   rgb:61/7b/aa
-#XTerm*color12:  rgb:5b/73/a0
+XTerm*color4:   rgb:61/7b/aa
+XTerm*color12:  rgb:5b/73/a0
 !magenta
-#XTerm*color5:   rgb:a0/70/a0
-#XTerm*color13:  rgb:a8/78/a8
+XTerm*color5:   rgb:a0/70/a0
+XTerm*color13:  rgb:a8/78/a8
 !cyan
-#XTerm*color6:   rgb:52/88/8e
-#XTerm*color14:  rgb:66/aa/b2
+XTerm*color6:   rgb:52/88/8e
+XTerm*color14:  rgb:66/aa/b2
 !white
-#XTerm*color7:   rgb:b0/b0/b0
-#XTerm*color15:  rgb:b0/b0/b0
+XTerm*color7:   rgb:b0/b0/b0
+XTerm*color15:  rgb:b0/b0/b0
 
-#Xterm*cursorColor: gray
+Xterm*cursorColor: gray
 
-#xterm.Font: -misc-fixed-medium-r-normal-*-*-110-*-*-c-*-iso8859-1
-#xterm*boldMode: false
-#xterm*background: black
-#xterm*foreground: gray
-#xterm.SimpleMenu*background:  #c5c2c5
-#xterm.SimpleMenu*foreground:  #000000
+!xterm.Font: -misc-fixed-medium-r-normal-*-*-110-*-*-c-*-iso8859-1
+!xterm*boldMode: false
+xterm*background: black
+xterm*foreground: gray
+xterm.SimpleMenu*background:  #c5c2c5
+xterm.SimpleMenu*foreground:  #000000
 
-#aterm*shading:40
-#aterm*background:Black
-#aterm*foreground:gray
-#aterm*scrollBar:false
-#aterm*transparent:true
-#aterm*font:-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
-#aterm*font:-artwiz-smooth-medium-r-semicondensed-*-*-120-*-*-m-*-iso10646-1
-#aterm*color4:rgb:0/50/ff
-#aterm*saveLines:1000
+!aterm*shading:40
+!aterm*background:Black
+!aterm*foreground:gray
+!aterm*scrollBar:false
+!aterm*transparent:true
+!aterm*font:-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
+!aterm*font:-artwiz-smooth-medium-r-semicondensed-*-*-120-*-*-m-*-iso10646-1
+!aterm*color4:rgb:0/50/ff
+!aterm*saveLines:1000
 
-#xterm*background:Black
-#xterm*foreground:White
+!xterm*background:Black
+!xterm*foreground:White
 
 
-#urxvt.depth: 32
-#urxvt.background: rgba:0000/0000/0000/d000
+!urxvt.depth: 32
+!urxvt.background: rgba:0000/0000/0000/d000
 urxvt.foreground: gray
 urxvt.internalBorder: 0
 urxvt.scrollBar: 0
@@ -58,10 +58,10 @@ urxvt.transparent: true
 urxvt.shading: 10
 urxvt.fading: 35
 urxvt.fadeColor: black
-#URxvt.borderLess: true
-#urxvt.border: 0
-#urxvt.externalBorder: 5
-#URxvt.borderColor: rgba:0000/0000/0000/a000
+!URxvt.borderLess: true
+!urxvt.border: 0
+!urxvt.externalBorder: 5
+!URxvt.borderColor: rgba:0000/0000/0000/a000
 urxvt.font: 6x13
 urxvt.savelines: 65535
 
@@ -103,3 +103,30 @@ URxvt.colorUL: #86a2be
 !urxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 lal*format: %T
+
+!black
+*color0:   rgb:00/00/00
+*color8:   rgb:60/60/60
+!red
+*color1:   rgb:a7/82/71
+*color9:   rgb:87/62/51
+!green
+*color2:   rgb:a3/bc/8d
+*color10:  rgb:6b/7c/5d
+!yellow
+*color3:   rgb:80/80/50
+*color11:  rgb:a0/a0/70
+!blue
+*color4:   rgb:61/7b/aa
+*color12:  rgb:5b/73/a0
+!magenta
+*color5:   rgb:a0/70/a0
+*color13:  rgb:a8/78/a8
+!cyan
+*color6:   rgb:52/88/8e
+*color14:  rgb:66/aa/b2
+!white
+*color7:   rgb:b0/b0/b0
+*color15:  rgb:b0/b0/b0
+
+
