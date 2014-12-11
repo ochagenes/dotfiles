@@ -12,7 +12,6 @@ compinit && promptinit && colors
 PROMPT="%{$fg[blue]%}%m %{$reset_color%}%1~%# "
 RPROMPT="%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
 PRINTER="futura"
-PATH=/snacks/bin:$PATH
 _force_rehash() {
 	  (( CURRENT == 1 )) && rehash
 		    return 1000 # Because we didn't really complete anything
