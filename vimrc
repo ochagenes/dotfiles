@@ -7,12 +7,15 @@ set nocompatible
 set bs=2
 set shiftwidth=4
 set tabstop=4
-set bg=light
+"set bg=light
 set ruler
 set laststatus=2
 set noexpandtab
 set noerrorbells
 set number
+set scrolloff=4
+set sidescrolloff=5
+set display+=lastline
 syntax on
 filetype on
 filetype plugin indent on
@@ -22,8 +25,8 @@ set background=dark
 colorscheme solarized
 
 set statusline=%t       "tail of the filename
-"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-"set statusline+=%{&ff}] "file format
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
@@ -88,7 +91,7 @@ map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
 endif
 
 " Map F2 to :TagExplorer
-nnoremap <silent> <F2> :TagExplorer<CR>
+nnoremap <silent> <F2> :SidePanel<CR>
 " Map F3 to :w, then :make
 nnoremap <silent> <F3> :w<CR>:make clean<CR>:make<CR>
 " Execute ./test
@@ -218,3 +221,9 @@ set lcs=tab:│\ ,trail:·,extends:>,precedes:<,nbsp:&
 "set lcs=tab:└─,trail:·,extends:>,precedes:<,nbsp:&
 "set lcs=tab:│┈,trail:·,extends:>,precedes:<,nbsp:&
 
+"SidePanel config
+let g:sidepanel_use_rabbit_ui = 0
+let g:sidepanel_config = {}
+let g:sidepanel_config['nerdtree'] = {}
+let g:sidepanel_config['tagbar'] = {}
+let g:sidepanel_config['gundo'] = {}
