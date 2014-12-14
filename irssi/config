@@ -17,8 +17,6 @@ servers = (
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
     autoconnect = "yes";
   },
   {
@@ -36,8 +34,6 @@ servers = (
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
   },
   {
     address = "irc.homelien.no";
@@ -45,63 +41,21 @@ servers = (
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
   },
   {
-    address = "goethe.freenode.net";
+    address = "chat.freenode.net";
     chatnet = "Freenode";
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
   },
   {
-    address = "ipv6.chat.eu.freenode.net";
+    address = "chat.eu.freenode.net";
     chatnet = "Freenode";
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
     autoconnect = "yes";
-  },
-  {
-    address = "crichton.freenode.net";
-    chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
-  },
-  {
-    address = "denis.freenode.net";
-    chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
-  },
-  {
-    address = "calkins.freenode.net";
-    chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
-  },
-  {
-    address = "mccaffrey.freenode.net";
-    chatnet = "Freenode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    own_host = "i.ole-k.net";
-    family = "inet6";
   }
 );
 
@@ -328,7 +282,6 @@ settings = {
     timestamp_format = "%H%M";
     use_proxy = "no";
     proxy_password = "31337";
-    use_ssl = "no";
     recode_autodetect_utf8 = "yes";
     recode_out_default_charset = "UTF-8";
   };
@@ -341,6 +294,7 @@ settings = {
     usercount_show_halfops = "yes";
     usercount_show_ircops = "yes";
     usercount_show_zero = "no";
+    trackbar_style = "%n";
   };
   proxy = {
     irssiproxy_password = "vaffel";
@@ -462,121 +416,6 @@ windows = {
         chat_type = "IRC";
         name = "#circlestorm";
         tag = "EFNet";
-      }
-    );
-  };
-  13 = {
-    items = (
-      { 
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "Dozer";
-        tag = "EFNet";
-      }
-    );
-  };
-  14 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "fusing777";
-        tag = "EFNet";
-      }
-    );
-  };
-  15 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "Fusing";
-        tag = "EFNet";
-      }
-    );
-  };
-  16 = {
-    items = (
-      { 
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "Wibla";
-        tag = "EFNet";
-      }
-    );
-  };
-  17 = {
-    items = (
-      { 
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "Mist";
-        tag = "EFNet";
-      }
-    );
-  };
-  18 = {
-    items = (
-      { type = "QUERY"; chat_type = "IRC"; name = "pnk"; tag = "EFNet"; }
-    );
-  };
-  19 = {
-    items = (
-      { 
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "Mist";
-        tag = "EFNet";
-      }
-    );
-  };
-  20 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "fusing2";
-        tag = "EFNet";
-      }
-    );
-  };
-  21 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "Fusing";
-        tag = "EFNet";
-      }
-    );
-  };
-  22 = {
-    items = (
-      { 
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "rexta";
-        tag = "EFNet";
-      }
-    );
-  };
-  23 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "fusingny";
-        tag = "EFNet";
-      }
-    );
-  };
-  24 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mate";
-        tag = "Freenode";
       }
     );
   };
