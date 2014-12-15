@@ -4,6 +4,7 @@ call pathogen#helptags()
 
 "general stuff
 set nocompatible
+set bg=light
 set bs=2 "Sane backspace
 set shiftwidth=4 "Tabs to be 4 char wide
 set tabstop=4 "Tabs to be 4 char wide
