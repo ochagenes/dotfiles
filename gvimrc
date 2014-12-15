@@ -9,3 +9,4 @@ colorscheme solarized
 if &encoding ==# 'latin1' && has('gui_running')
 	set encoding=utf-8
 endif
+set guioptions-=mlLrR "dont show menu or scrollbars
