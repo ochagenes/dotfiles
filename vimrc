@@ -4,26 +4,31 @@ call pathogen#helptags()
 
 "general stuff
 set nocompatible
-set bs=2
-set shiftwidth=4
-set tabstop=4
-"set bg=light
-set ruler
-set laststatus=2
-set noexpandtab
-set noerrorbells
-set number
-set scrolloff=4
+set bs=2 "Sane backspace
+set shiftwidth=4 "Tabs to be 4 char wide
+set tabstop=4 "Tabs to be 4 char wide
+set noexpandtab "Tabs to be 4 char wide
+set laststatus=2 "always show status bar
+set noerrorbells "Keep co-workers happy
+set number "show line numbers
+let &showbreak = '+++> ' "Indicate linebreak
+set scrolloff=4 "Show 4 lines above/below cursor
 set sidescrolloff=5
 set display+=lastline
+set wildmenu "Completion menu
 syntax on
 filetype on
 filetype plugin indent on
+
+"change background color beyond 80 char
+let &colorcolumn=join(range(81,500),",")
+
 "colorscheme torte
 "colorscheme molokai
 set background=dark
 colorscheme solarized
 
+"statusline
 set statusline=%t       "tail of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
@@ -66,7 +71,9 @@ nnoremap <F1> <ESC>:help
 au FileType mail set textwidth=72 formatoptions=t
 
 " avoid annoying "Hit ENTER to continue" prompts
-set shortmess=a
+"set shortmess=aTI
+" Disable the splash screen ..oops
+"set shortmess+=I
 
 " incremental search
 set incsearch
@@ -90,7 +97,7 @@ else
 map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
 endif
 
-" Map F2 to :TagExplorer
+" Map F2 to :SidePanel
 nnoremap <silent> <F2> :SidePanel<CR>
 " Map F3 to :w, then :make
 nnoremap <silent> <F3> :w<CR>:make clean<CR>:make<CR>
@@ -108,8 +115,6 @@ nnoremap <leader>v <Plug>TaskList
 
 let TE_Adjust_Winwidth = 0 
 
-" Disable the splash screen ..oops
-set shortmess=I
 
 " Change to the directory the file in your current buffer is in
 if has ("autocmd")
@@ -126,7 +131,7 @@ function InsertTabWrapper()
 	endif
 endfunction
 
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " move _and_ scroll down one line
 nnoremap <C-J> 1<C-D>:set scroll=0<CR>
@@ -227,3 +232,4 @@ let g:sidepanel_config = {}
 let g:sidepanel_config['nerdtree'] = {}
 let g:sidepanel_config['tagbar'] = {}
 let g:sidepanel_config['gundo'] = {}
+
