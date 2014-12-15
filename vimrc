@@ -66,7 +66,7 @@ set foldmethod=indent
 set foldlevelstart=99
 
 " remap F1 to ": help "
-nnoremap <F1> <ESC>:help 
+nnoremap <F1> <ESC>:help
 
 " nice when using vim as email-editor
 au FileType mail set textwidth=72 formatoptions=t
@@ -104,7 +104,7 @@ nnoremap <silent> <F2> :SidePanel<CR>
 nnoremap <silent> <F3> :w<CR>:make clean<CR>:make<CR>
 " Execute ./test
 nnoremap <silent> <F4> :!./test<CR>
-" Comment out lines with F5, PEP8 uses F5 
+" Comment out lines with F5, PEP8 uses F5
 "nnoremap <silent> <F5> 0i/*<ESC>$a*/<ESC>
 " Insert comments with F6
 nnoremap <silent> <F6> A /*  */<esc>hhha
@@ -114,7 +114,7 @@ nnoremap <leader>v <Plug>TaskList
 " Only display certain file-types in tagexplorer
 " let TE_Include_File_Pattern = '.*\.c$\|.*\.h$\|.*\cc$\|.*\cpp$\|Makefile$\|.*\.py$\|.*\.asm$\|.*\.s$\|.*\.sh$\|.*\.pl$\|.*\.pas$'
 
-let TE_Adjust_Winwidth = 0 
+let TE_Adjust_Winwidth = 0
 
 
 " Change to the directory the file in your current buffer is in
@@ -234,3 +234,11 @@ let g:sidepanel_config['nerdtree'] = {}
 let g:sidepanel_config['tagbar'] = {}
 let g:sidepanel_config['gundo'] = {}
 
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_enable_signs = 1
+let g:syntastic_java_checkers = ['checkstyle', 'javac']
+let g:syntastic_java_checkstyle_classpath = 'checkstyle.jar'
+let g:syntastic_java_checkstyle_conf_file = 'sun_checks.xml'
