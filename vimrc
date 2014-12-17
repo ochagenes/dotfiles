@@ -242,3 +242,6 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_java_checkers = ['checkstyle', 'javac']
 let g:syntastic_java_checkstyle_classpath = 'checkstyle.jar'
 let g:syntastic_java_checkstyle_conf_file = 'sun_checks.xml'
+
+let g:formatprg_args_expr_java='"--mode=java --style=ansi -A2 -pcHT".(&expandtab ? "s".&shiftwidth : "t")'
+
