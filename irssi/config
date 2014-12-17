@@ -277,7 +277,7 @@ statusbar = {
 settings = {
   core = {
     real_name = "Ole-Christian S. Hagenes";
-    user_name = "agonyzer";
+    user_name = "nyzer";
     nick = "nyzer";
     timestamp_format = "%H%M";
     use_proxy = "no";
@@ -289,6 +289,8 @@ settings = {
     theme = "ole2";
     term_charset = "UTF-8";
     activity_hide_level = "JOINS PARTS QUITS MODES NICKS KICKS";
+    hilight_color = "%R";
+    hilight_act_color = "%R";
   };
   "perl/core/scripts" = {
     usercount_show_halfops = "yes";
@@ -296,15 +298,10 @@ settings = {
     usercount_show_zero = "no";
     trackbar_style = "%n";
   };
-  proxy = {
-    irssiproxy_password = "vaffel";
-    irssiproxy_ports = "efnet=55133 freenode=55134 ircnet=55135";
-    irssiproxy_bind = "85.17.90.201";
-  };
   "fe-text" = { actlist_sort = "refnum"; };
 };
 logs = { };
-hilights = ( { text = "nyzer"; nick = "yes"; word = "yes"; } );
+hilights = ( { text = "nyzer"; color = "%R"; nick = "yes"; word = "yes"; } );
 conversions = { "#circlestorm" = "ISO8859-15"; };
 ignores = ( { level = "JOINS QUITS"; channels = ( "#archlinux" ); } );
 windows = {
