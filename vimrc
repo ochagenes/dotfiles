@@ -3,6 +3,7 @@ call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
 "general stuff
+set encoding=utf-8
 set nocompatible
 set bg=light
 set bs=2 "Sane backspace
