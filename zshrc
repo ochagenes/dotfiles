@@ -31,8 +31,8 @@ PROMPT="%{$fg[$hostcolor]%}%m %{$reset_color%}%1~%# "
 RPROMPT="%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
 PRINTER="futura"
 _force_rehash() {
-	  (( CURRENT == 1 )) && rehash
-		    return 1000 # Because we didn't really complete anything
+	(( CURRENT == 1 )) && rehash
+		return 1000 # Because we didn't really complete anything
 }
 setopt HIST_IGNORE_DUPS
 zstyle ':completion:*' completer _expand _force_rehash _complete _approximate
@@ -49,3 +49,34 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' users ochagene
+
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -A key
+
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+key[Delete]=${terminfo[kdch1]}
+key[PageUp]=${terminfo[kpp]}
+key[PageDown]=${terminfo[knp]}
+
+# setup key accordingly
+[[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
+[[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
+[[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
+[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
+[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
+
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+	function zle-line-init () {
+		printf '%s' "${terminfo[smkx]}"
+	}
+	function zle-line-finish () {
+		printf '%s' "${terminfo[rmkx]}"
+	}
+	zle -N zle-line-init
+	zle -N zle-line-finish
+fi
