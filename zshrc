@@ -8,7 +8,11 @@ fi
 if [[ -f ~/dotfiles/256term.sh ]] ; then
 	emulate sh -c 'source ~/dotfiles/256term.sh'
 fi
-alias ls='ls --color=auto -F'
+if [[ `uname` == "OpenBSD" ]];then
+	alias ls='ls -F'
+else
+	alias ls='ls --color=auto -F'
+fi
 bindkey -e
 autoload -Uz compinit promptinit colors
 compinit && promptinit && colors
