@@ -30,6 +30,7 @@ _force_rehash() {
 	  (( CURRENT == 1 )) && rehash
 		    return 1000 # Because we didn't really complete anything
 }
+setopt HIST_IGNORE_DUPS
 zstyle ':completion:*' completer _expand _force_rehash _complete _approximate
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
