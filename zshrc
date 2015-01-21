@@ -1,22 +1,29 @@
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-EDITOR=vim
+export HISTFILE=~/.histfile
+export HISTSIZE=10000
+export SAVEHIST=10000
+export EDITOR=vim
+
+hostcolor=blue
+
 if [[ -d /snacks/bin ]] ; then
 	path=(/snacks/bin $path)
 fi
+
 if [[ -f ~/dotfiles/256term.sh ]] ; then
 	emulate sh -c 'source ~/dotfiles/256term.sh'
 fi
+
 if [[ `uname` == "OpenBSD" ]];then
 	alias ls='ls -F'
+	hostcolor=red
 else
 	alias ls='ls --color=auto -F'
 fi
+
 bindkey -e
 autoload -Uz compinit promptinit colors
 compinit && promptinit && colors
-PROMPT="%{$fg[blue]%}%m %{$reset_color%}%1~%# "
+PROMPT="%{$fg[$hostcolor]%}%m %{$reset_color%}%1~%# "
 RPROMPT="%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
 PRINTER="futura"
 _force_rehash() {
