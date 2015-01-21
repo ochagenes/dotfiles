@@ -14,7 +14,7 @@ if [[ -f ~/dotfiles/256term.sh ]] ; then
 fi
 
 if [[ -n $SSH_CLIENT ]] ; then
-	hostcolor=orange
+	hostcolor=yellow
 fi
 
 if [[ `uname` == "OpenBSD" ]];then
