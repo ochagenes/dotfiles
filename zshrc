@@ -13,6 +13,10 @@ if [[ -f ~/dotfiles/256term.sh ]] ; then
 	emulate sh -c 'source ~/dotfiles/256term.sh'
 fi
 
+if [[ -n $SSH_CLIENT ]] ; then
+	hostcolor=orange
+fi
+
 if [[ `uname` == "OpenBSD" ]];then
 	alias ls='ls -F'
 	hostcolor=red
