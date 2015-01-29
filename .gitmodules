@@ -73,3 +73,6 @@
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+[submodule "vim/bundle/unite-spell-suggest"]
+	path = vim/bundle/unite-spell-suggest
+	url = https://github.com/kopischke/unite-spell-suggest.git
