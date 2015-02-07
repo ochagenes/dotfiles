@@ -97,7 +97,7 @@ let b:jcommenter_file_author = 'Ole-Christian S. Hagenes (ochagene@uio.no)'
 let b:jcommenter_use_exception_tag = 0
 
 " set to true if you don't like the automatically added "created"-time
-let b:jcommenter_file_noautotime = 1
+let b:jcommenter_file_noautotime = 0
 
 " define whether jcommenter tries to parse and update the existing Doc-comments
 " on the item it was executed on. If this feature is disabled, a completely new
