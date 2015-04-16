@@ -5,8 +5,8 @@ call pathogen#helptags()
 "general stuff
 set encoding=utf-8
 set nocompatible
-set bg=light
-set bs=2 "Sane backspace
+"set bg=light
+set backspace=indent,eol,start "Sane backspace
 set shiftwidth=4 "Tabs to be 4 char wide
 set tabstop=4 "Tabs to be 4 char wide
 set noexpandtab "Tabs to be 4 char wide
@@ -16,10 +16,10 @@ set number "show line numbers
 let &showbreak = '+++> ' "Indicate linebreak
 set scrolloff=4 "Show 4 lines above/below cursor
 set sidescrolloff=5
-set display+=lastline
+"set display+=lastline
 set wildmenu "Completion menu
 syntax on
-filetype on
+"filetype on
 filetype plugin indent on
 
 "change background color beyond 80 char
@@ -31,30 +31,30 @@ set background=dark
 colorscheme solarized
 
 "statusline
-set statusline=%t       "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=%{fugitive#statusline()}
-set statusline+=%=      "left/right separator
-set statusline+=%l,   "cursor line/total lines
-set statusline+=%c%V     "cursor column
-set statusline+=\ %P    "percent through file
+"set statusline=%t       "tail of the filename
+"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+"set statusline+=%{&ff}] "file format
+"set statusline+=%h      "help file flag
+"set statusline+=%m      "modified flag
+"set statusline+=%r      "read only flag
+"set statusline+=%y      "filetype
+"set statusline+=%{fugitive#statusline()}
+"set statusline+=%=      "left/right separator
+"set statusline+=%l,   "cursor line/total lines
+"set statusline+=%c%V     "cursor column
+"set statusline+=\ %P    "percent through file
 "set statusline+=%-12.(%l,%c%V%)\ %<%P        " offset
 "set statusline+=%{fugitive#statusline()}
 
-hi StatusLine ctermfg=0 ctermbg=7 gui=bold,reverse
+"hi StatusLine ctermfg=0 ctermbg=7 gui=bold,reverse
 " now set it up to change the status line based on mode
-if version >= 700
-  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=7 gui=bold,reverse
-endif
+"if version >= 700
+"  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+"  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=7 gui=bold,reverse
+"endif
 
 " indenting
-set ai
+set autoindent
 set smartindent
 set cindent
 
@@ -246,3 +246,4 @@ let g:syntastic_java_checkstyle_conf_file = 'sun_checks.xml'
 
 let g:formatprg_args_expr_java='"--mode=java --style=ansi -A2 -pcHT".(&expandtab ? "s".&shiftwidth : "t")'
 
+let g:airline_section_z = '%P'
