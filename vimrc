@@ -9,11 +9,12 @@ set nocompatible
 set backspace=indent,eol,start "Sane backspace
 set shiftwidth=4 "Tabs to be 4 char wide
 set tabstop=4 "Tabs to be 4 char wide
-set noexpandtab "Tabs to be 4 char wide
+set noexpandtab "Indent using tab char
 set laststatus=2 "always show status bar
 set noerrorbells "Keep co-workers happy
 set number "show line numbers
-let &showbreak = '+++> ' "Indicate linebreak
+"let &showbreak = '+++> ' "Indicate linebreak
+set showbreak=↪
 set scrolloff=4 "Show 4 lines above/below cursor
 set sidescrolloff=5
 "set display+=lastline
@@ -90,6 +91,18 @@ nmap <silent> <C-N> :silent noh<CR>
 set ignorecase
 set smartcase
 
+set list
+set listchars=tab:│\ ,trail:·,extends:>,precedes:<,nbsp:&
+"set lcs=tab:└─,trail:·,extends:>,precedes:<,nbsp:&
+"set lcs=tab:│┈,trail:·,extends:>,precedes:<,nbsp:&
+
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
+
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 " (thanks Douglas Potts)
@@ -115,7 +128,7 @@ nnoremap <leader>v <Plug>TaskList
 " Only display certain file-types in tagexplorer
 " let TE_Include_File_Pattern = '.*\.c$\|.*\.h$\|.*\cc$\|.*\cpp$\|Makefile$\|.*\.py$\|.*\.asm$\|.*\.s$\|.*\.sh$\|.*\.pl$\|.*\.pas$'
 
-let TE_Adjust_Winwidth = 0
+let g:TE_Adjust_Winwidth = 0
 
 
 " Change to the directory the file in your current buffer is in
@@ -222,11 +235,6 @@ cab sp Sp
 " :inoremap [ []<ESC>:let leavechar="]"<CR>i
 
 :imap <C-l> <ESC>:exec "normal f" . leavechar<CR>a
-
-set list
-set lcs=tab:│\ ,trail:·,extends:>,precedes:<,nbsp:&
-"set lcs=tab:└─,trail:·,extends:>,precedes:<,nbsp:&
-"set lcs=tab:│┈,trail:·,extends:>,precedes:<,nbsp:&
 
 "SidePanel config
 let g:sidepanel_use_rabbit_ui = 0
