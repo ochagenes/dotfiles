@@ -70,9 +70,9 @@
 [submodule "vim/bundle/vim-autoformat"]
 	path = vim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat.git
-[submodule "vim/bundle/vim-latex"]
-	path = vim/bundle/vim-latex
-	url = https://github.com/vim-latex/vim-latex.git
 [submodule "vim/bundle/unite-spell-suggest"]
 	path = vim/bundle/unite-spell-suggest
 	url = https://github.com/kopischke/unite-spell-suggest.git
+[submodule "vim/bundle/LaTeX-Box"]
+	path = vim/bundle/LaTeX-Box
+	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
