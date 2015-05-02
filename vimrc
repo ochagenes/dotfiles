@@ -14,7 +14,7 @@ set laststatus=2 "always show status bar
 set noerrorbells "Keep co-workers happy
 set number "show line numbers
 "let &showbreak = '+++> ' "Indicate linebreak
-set showbreak=↪
+let &showbreak = '↪ '
 set scrolloff=4 "Show 4 lines above/below cursor
 set sidescrolloff=5
 "set display+=lastline
