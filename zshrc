@@ -24,6 +24,12 @@ else
 	alias ls='ls --color=auto -F'
 fi
 
+case $TERM in
+	*xterm*)
+		precmd () { print -Pn "\e]0;@%m: %(1j,%j job%(2j|s|); ,)%~\a" }
+		preexec () { print -Pn "\e]0;@%m: $1\a" }
+esac
+
 bindkey -e
 autoload -Uz compinit promptinit colors
 compinit && promptinit && colors
