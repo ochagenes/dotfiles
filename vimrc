@@ -119,7 +119,7 @@ nnoremap <silent> <F3> :w<CR>:make clean<CR>:make<CR>
 " Execute ./test
 nnoremap <silent> <F4> :!./test<CR>
 " Comment out lines with F5, PEP8 uses F5
-"nnoremap <silent> <F5> 0i/*<ESC>$a*/<ESC>
+nnoremap <silent> <F5> 0i/*<ESC>$a*/<ESC>
 " Insert comments with F6
 nnoremap <silent> <F6> A /*  */<esc>hhha
 " \t is taken by CommantT
@@ -255,3 +255,4 @@ let g:syntastic_java_checkstyle_conf_file = 'sun_checks.xml'
 let g:formatprg_args_expr_java='"--mode=java --style=ansi -A2 -pcHT".(&expandtab ? "s".&shiftwidth : "t")'
 
 let g:airline_section_z = '%P'
+let g:airline#extensions#whitespace#checks = [ 'trailing' ]
