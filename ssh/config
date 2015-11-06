@@ -15,7 +15,7 @@ ForwardX11 yes
 host nl.wibla.net
 user ochagenes
 
-host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no
+host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no rh7login.ifi.uio.no
 user ochagene
 ForwardX11 yes
 
