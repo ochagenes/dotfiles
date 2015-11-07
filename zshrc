@@ -31,10 +31,24 @@ case $TERM in
 esac
 
 bindkey -e
-autoload -Uz compinit promptinit colors
+setopt prompt_subst
+autoload -Uz compinit promptinit colors vcs_info
 compinit && promptinit && colors
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' actionformats \
+	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f%u%c '
+#zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' check-for-staged-changes true
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+
+
 PROMPT="%{$fg[$hostcolor]%}%m %{$reset_color%}%1~%# "
-RPROMPT="%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
+RPROMPT=\$vcs_info_msg_0_"%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
+
 PRINTER="futura"
 _force_rehash() {
 	(( CURRENT == 1 )) && rehash
