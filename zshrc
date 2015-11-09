@@ -9,6 +9,10 @@ if [[ -d /snacks/bin ]] ; then
 	path=(/snacks/bin $path)
 fi
 
+if [[ -d ~/bin ]] ; then
+	path=(~/bin $path)
+fi
+
 if [[ -f ~/dotfiles/256term.sh ]] ; then
 	emulate sh -c 'source ~/dotfiles/256term.sh'
 fi
