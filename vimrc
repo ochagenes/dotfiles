@@ -256,3 +256,5 @@ let g:formatprg_args_expr_java='"--mode=java --style=ansi -A2 -pcHT".(&expandtab
 
 let g:airline_section_z = '%P'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
+
+ let g:rainbow_active = 1
