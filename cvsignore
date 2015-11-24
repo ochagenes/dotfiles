@@ -41,3 +41,9 @@ tags
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Cruft from latex compiles #
+#############################
+*.aux
+*.fdb_latexmk
+*.fls
