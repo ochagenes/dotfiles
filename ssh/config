@@ -15,10 +15,21 @@ ForwardX11 yes
 host nl.wibla.net
 user ochagenes
 
-host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no rh7login.ifi.uio.no
+host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no rh7login.ifi.uio.no vetur vetur.ifi.uio.no vor vor.ifi.uio.no
 user ochagene
+ForwardX11Trusted yes
+
+host login7
+hostname nordur.ifi.uio.no
+user ochagene
+ForwardX11Trusted yes
 ForwardX11 yes
 
 host get.ole-k.net
 user ochagenes
 ForwardX11 yes
+
+host gw.get.ole-k.net
+hostname get.ole-k.net
+port 2222
+
