@@ -1,0 +1,3 @@
+#rfkill block bluetooth
+~/bin/xset.sh &
+#xrdb ~/.Xresources
