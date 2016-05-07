@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="ssh/config bashrc vim vimrc gvimrc irssi zshrc mplayer Xdefaults xmodmap"    # list of files/folders to symlink in homedir
+files="ssh/config vim vimrc gvimrc irssi zshrc mpv Xdefaults xmodmap"    # list of files/folders to symlink in homedir
 
 ##########
 
