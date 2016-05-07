@@ -3,11 +3,11 @@
 set guioptions-=T
 " set showtabline=2
 " set ruler
-if (match(system("hostname -s"), "fagerlin") != -1)
+"if (match(system("hostname -s"), "fagerlin") != -1)
+"	set guifont=Source\ Code\ Pro\ Medium\ 11
+"else
 	set guifont=Source\ Code\ Pro\ Medium\ 11
-else
-	set guifont=Source\ Code\ Pro\ Medium\ 9
-endif
+"endif
 set background=dark
 colorscheme solarized
 if &encoding ==# 'latin1' && has('gui_running')
