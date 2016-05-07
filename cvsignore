@@ -47,3 +47,5 @@ Thumbs.db
 *.aux
 *.fdb_latexmk
 *.fls
+*.toc
+*.log
