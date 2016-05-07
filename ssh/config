@@ -17,17 +17,22 @@ user ochagenes
 
 host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no rh7login.ifi.uio.no vetur vetur.ifi.uio.no vor vor.ifi.uio.no
 user ochagene
+ForwardX11 yes
 ForwardX11Trusted yes
+Compression yes
 
 host login7
 hostname nordur.ifi.uio.no
 user ochagene
-ForwardX11Trusted yes
 ForwardX11 yes
+ForwardX11Trusted yes
+Compression yes
 
 host get.ole-k.net
 user ochagenes
 ForwardX11 yes
+ForwardX11Trusted yes
+Compression yes
 
 host gw.get.ole-k.net
 hostname get.ole-k.net
