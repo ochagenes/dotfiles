@@ -1,8 +1,8 @@
 !---------------------------------------------------------
 ! CapsLock used as Esc instead, So i vim faster :-).
 
-clear lock
-keycode 66 = Escape
+!clear lock
+!keycode 66 = Control
 
 !---------------------------------------------------------
 ! רזו keys obtained with ISO_Level3_Shift ( = alt_gr key )
