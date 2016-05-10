@@ -49,3 +49,8 @@ Thumbs.db
 *.fls
 *.toc
 *.log
+*.out
+
+# Octave makes some weird files
+###############################
+octave-workspace
