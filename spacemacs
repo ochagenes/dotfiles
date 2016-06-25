@@ -103,6 +103,7 @@ values."
                          ;solarized-light
                          smyx
                          sanityinc-solarized-dark
+                         zenburn
                          )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
