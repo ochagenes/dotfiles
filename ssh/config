@@ -28,13 +28,14 @@ ForwardX11 yes
 ForwardX11Trusted yes
 Compression yes
 
-host get.ole-k.net
+host get.ole-k.net fagerlin
 user ochagenes
 ForwardX11 yes
 ForwardX11Trusted yes
 Compression yes
 
 host gw.get.ole-k.net
+user ochagenes
 hostname get.ole-k.net
 port 2222
 
