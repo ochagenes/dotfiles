@@ -2,6 +2,7 @@ export HISTFILE=~/.histfile
 export HISTSIZE=10000
 export SAVEHIST=10000
 export EDITOR=vim
+export GTAGSLABEL=pygments
 
 hostcolor=blue
 if [[ -e /usr/bin/ksshaskpass ]] ; then
