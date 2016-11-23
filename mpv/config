@@ -1,5 +1,5 @@
 # Write your default config options here!
 
 fullscreen
-vo=xv
-osd-level=0
+#vo=xv
+#osd-level=0
