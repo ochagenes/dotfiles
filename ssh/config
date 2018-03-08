@@ -39,3 +39,7 @@ user ochagenes
 hostname get.ole-k.net
 port 2222
 
+host rosa.hagenes-it.no rosa
+user ochagenes
+hostname lynet.hagenes-it.no
+port 222
