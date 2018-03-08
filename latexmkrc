@@ -1,3 +1,4 @@
-$pdf_mode = 1;
+$pdf_mode = 4;
 $postscript_mode = $dvi_mode = 0;
-$pdflatex = "xelatex %O %S";
+$pdflatex = "lualatex --shell-escape %O %S";
+$lualatex = "lualatex --shell-escape %O %S";
