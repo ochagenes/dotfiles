@@ -50,6 +50,13 @@ Thumbs.db
 *.toc
 *.log
 *.out
+*.bbl
+*.bcf
+*.blg
+*.idx
+*.ilg
+*.ind
+*.run.xml
 
 # Octave makes some weird files
 ###############################
