@@ -19,7 +19,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -49,7 +49,8 @@ filetype plugin indent on
 
 
 "change background color beyond 80 char
-let &colorcolumn=join(range(81,81),",")
+" let &colorcolumn=join(range(81,81),",")
+set colorcolumn=+1
 
 " indenting
 set autoindent
@@ -104,6 +105,10 @@ augroup cline
     au WinEnter,InsertLeave * set cursorline
 augroup END
 
+" Enable Conceal
+set conceallevel=2
+highlight Conceal guifg=LawnGreen guibg=Gray22
+
 "=====
 " Keys
 "=====
@@ -132,6 +137,9 @@ nnoremap <leader>tp :RainbowToggle<CR>
 
 " Toggle NerdTree
 nnoremap <leader>tn :NERDTreeToggle<CR>
+
+" Toggle tagbar
+nnoremap <leader>tt :TagbarToggle<CR>
 "=========
 " Plugin config
 "=========
@@ -160,9 +168,10 @@ let g:ale_sign_warning = '⚠'
 let g:deoplete#enable_at_startup = 1
 
 " Rainbow parentheses
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
 
 " vimtex
+let g:tex_flavor = 'latex'
 let g:vimtex_compiler_latexmk = {
     \ 'backend' : 'nvim',
     \ 'background' : 1,

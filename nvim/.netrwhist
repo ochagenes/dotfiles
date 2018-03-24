@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/ochagenes/Master/INF5860/inf5860_oblig1'
+let g:netrw_dirhist_2='/home/ochagenes/Master/INF5860/inf5860_oblig1/inf5860'
+let g:netrw_dirhist_3='/home/ochagenes/Master/INF5860/inf5860_oblig1/inf5860/classifiers'
