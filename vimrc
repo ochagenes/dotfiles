@@ -1,6 +1,6 @@
-filetype off
-call pathogen#infect('bundle/{}')
-call pathogen#helptags()
+"filetype off
+"call pathogen#infect('bundle/{}')
+"call pathogen#helptags()
 
 "general stuff
 set encoding=utf-8
@@ -28,8 +28,8 @@ let &colorcolumn=join(range(81,500),",")
 
 "colorscheme torte
 "colorscheme molokai
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 "statusline
 "set statusline=%t       "tail of the filename
@@ -106,11 +106,11 @@ augroup END
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 " (thanks Douglas Potts)
-if has("unix")
-map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
-else
-map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
-endif
+"if has("unix")
+"map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+"else
+"map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
+"endif
 
 " Map F2 to :SidePanel
 nnoremap <silent> <F2> :SidePanel<CR>
@@ -128,13 +128,13 @@ nnoremap <leader>v <Plug>TaskList
 " Only display certain file-types in tagexplorer
 " let TE_Include_File_Pattern = '.*\.c$\|.*\.h$\|.*\cc$\|.*\cpp$\|Makefile$\|.*\.py$\|.*\.asm$\|.*\.s$\|.*\.sh$\|.*\.pl$\|.*\.pas$'
 
-let g:TE_Adjust_Winwidth = 0
+"let g:TE_Adjust_Winwidth = 0
 
 
 " Change to the directory the file in your current buffer is in
-if has ("autocmd")
-autocmd BufEnter * :cd %:p:h
-endif " has("autocmd")
+"if has ("autocmd")
+"autocmd BufEnter * :cd %:p:h
+"endif " has("autocmd")
 
 " use tab for tab-completion in insert mode
 function InsertTabWrapper()
@@ -149,9 +149,9 @@ endfunction
 "inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " move _and_ scroll down one line
-nnoremap <C-J> 1<C-D>:set scroll=0<CR>
+"nnoremap <C-J> 1<C-D>:set scroll=0<CR>
 " move _and_ scroll up one line
-nnoremap <C-K> 1<C-U>:set scroll=0<CR>
+"nnoremap <C-K> 1<C-U>:set scroll=0<CR>
 
 " Toggle fold state between closed and opened.
 "
@@ -234,7 +234,7 @@ cab sp Sp
 " :inoremap { {}<ESC>:let leavechar="}"<CR>i
 " :inoremap [ []<ESC>:let leavechar="]"<CR>i
 
-:imap <C-l> <ESC>:exec "normal f" . leavechar<CR>a
+":imap <C-l> <ESC>:exec "normal f" . leavechar<CR>a
 
 "SidePanel config
 let g:sidepanel_use_rabbit_ui = 0
