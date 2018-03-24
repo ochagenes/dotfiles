@@ -44,13 +44,15 @@ autoload -Uz compinit promptinit colors vcs_info
 compinit && promptinit && colors
 
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' unstagedstr "%F{red}✘%f"
+zstyle ':vcs_info:*' stagedstr "%F{yellow} %f"
 zstyle ':vcs_info:*' actionformats \
 	'(%r)-[%b|%a]%u%c-'
 #	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
-	'%r on %b %u%c'
+	'%F{4}📕%f%r %u%c%F{4}%f%b'
 #	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f%u%c '
-#zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' check-for-staged-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks git-st
 precmd_vcs_info() { vcs_info }
@@ -113,12 +115,14 @@ fi
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;73m' \
     LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[0;38;44m' \
     LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+	GROFF_NO_SGR=1 \
+	MANPAGER='less -s -M +Gg' \
     man "$@"
 }
 
@@ -132,16 +136,17 @@ function +vi-git-st() {
         --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
 
     if [[ -n ${remote} ]] ; then
+		gitstatus+=("")
         # for git prior to 1.7
         # ahead=$(git rev-list origin/${hook_com[branch]}..HEAD | wc -l)
         ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
-        (( $ahead )) && gitstatus+=( " ${c3}+${ahead}${c2}" )
+        (( $ahead )) && gitstatus+=( "%F{green}⇡${ahead}%f" )
 
         # for git prior to 1.7
         # behind=$(git rev-list HEAD..origin/${hook_com[branch]} | wc -l)
         behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
-        (( $behind )) && gitstatus+=( " ${c4}-${behind}${c2}" )
+        (( $behind )) && gitstatus+=( "%F{red}⇣${behind}%f" )
 
-        hook_com[branch]="${hook_com[branch]} ${(j:/:)gitstatus}"
+        hook_com[branch]="${hook_com[branch]}${gitstatus}"
     fi
 }
