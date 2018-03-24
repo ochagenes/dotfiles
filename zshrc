@@ -45,11 +45,14 @@ compinit && promptinit && colors
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' actionformats \
-	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+	'(%r)-[%b|%a]%u%c-'
+#	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
-	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f%u%c '
+	'%r on %b %u%c'
+#	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f%u%c '
 #zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' check-for-staged-changes true
+zstyle ':vcs_info:git*+set-message:*' hooks git-st
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 
@@ -57,7 +60,6 @@ precmd_functions+=( precmd_vcs_info )
 PROMPT="%{$fg[$hostcolor]%}%m %{$reset_color%}%1~%# "
 RPROMPT=\$vcs_info_msg_0_"%(?..[%{$fg[red]%}%?%{$reset_color%}]) %T"
 
-PRINTER="futura"
 _force_rehash() {
 	(( CURRENT == 1 )) && rehash
 		return 1000 # Because we didn't really complete anything
@@ -118,4 +120,28 @@ man() {
     LESS_TERMCAP_ue=$'\E[0m' \
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
+}
+
+# Show remote ref name and number of commits ahead-of or behind
+function +vi-git-st() {
+    local ahead behind remote
+    local -a gitstatus
+
+    # Are we on a remote-tracking branch?
+    remote=${$(git rev-parse --verify ${hook_com[branch]}@{upstream} \
+        --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
+
+    if [[ -n ${remote} ]] ; then
+        # for git prior to 1.7
+        # ahead=$(git rev-list origin/${hook_com[branch]}..HEAD | wc -l)
+        ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
+        (( $ahead )) && gitstatus+=( " ${c3}+${ahead}${c2}" )
+
+        # for git prior to 1.7
+        # behind=$(git rev-list HEAD..origin/${hook_com[branch]} | wc -l)
+        behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+        (( $behind )) && gitstatus+=( " ${c4}-${behind}${c2}" )
+
+        hook_com[branch]="${hook_com[branch]} ${(j:/:)gitstatus}"
+    fi
 }
