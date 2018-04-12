@@ -22,6 +22,11 @@ Plug 'zchee/deoplete-jedi'
 " Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'hecal3/vim-leader-guide'
+Plug 'ehamberg/vim-cute-python'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
@@ -29,6 +34,7 @@ call plug#end()
 "general stuff
 set encoding=utf-8
 set nocompatible
+set hidden
 set backspace=indent,eol,start "Sane backspace
 set shiftwidth=4 "Tabs to be 4 char wide
 set tabstop=4 "Tabs to be 4 char wide
@@ -51,6 +57,8 @@ filetype plugin indent on
 "change background color beyond 80 char
 " let &colorcolumn=join(range(81,81),",")
 set colorcolumn=+1
+"colorscheme solarized
+set bg=dark
 
 " indenting
 set autoindent
@@ -107,7 +115,7 @@ augroup END
 
 " Enable Conceal
 set conceallevel=2
-highlight Conceal guifg=LawnGreen guibg=Gray22
+" highlight Conceal guifg=LawnGreen guibg=Gray22
 
 "=====
 " Keys
@@ -147,10 +155,13 @@ nnoremap <leader>tt :TagbarToggle<CR>
 let g:airline_section_z = '%P'
 let g:airline#extensions#whitespace#checks = [ 'trailing' ]
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ctrlspace#enabled = 1
 
 " Syntastic
 " let g:syntastic_always_populate_loc_list=1
@@ -172,6 +183,7 @@ let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
 
 " vimtex
 let g:tex_flavor = 'latex'
+let g:vimtex_compiler_progname = '~/.local/bin/nvr'
 let g:vimtex_compiler_latexmk = {
     \ 'backend' : 'nvim',
     \ 'background' : 1,
@@ -186,8 +198,32 @@ let g:vimtex_compiler_latexmk = {
     \   '-interaction=nonstopmode',
     \ ],
 \}
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
 
 " IndentLine
-let g:indentLine_enabled = 1
-"let g:indentLine_setColors = 0
-let g:indentLine_char = '▏'
+" let g:indentLine_enabled = 1
+" let g:indentLine_setColors = 1
+" let g:indentLine_char = '▏'
+
+" Leader-Guide
+ let g:lmap =  {}
+" call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+
+let g:llmap = {}
+autocmd FileType tex let g:llmap.l = { 'name' : 'vimtex' }
+call leaderGuide#register_prefix_descriptions("\\", "g:llmap")
+nnoremap <localleader> :<c-u>LeaderGuide  "\\"<CR>
+" vnoremap <localleader> :<c-u>LeaderGuideVisual  ','<CR>
+" map <leader>. <Plug>leaderguide-global
+" map <localleader>. <Plug>leaderguide-buffer
+
+" CtrlSpace
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
+let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
+nnoremap <silent><C-Space> :CtrlSpace<CR>
