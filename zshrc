@@ -50,11 +50,11 @@ zstyle ':vcs_info:*' actionformats \
 	'(%r)-[%b|%a]%u%c-'
 #	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
-	'%F{4}📕%f%r %u%c%F{4}%f%b'
+	'%F{4}📕%f%r %u%c%b'
 #	'%F{5}(%f%r%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f%u%c '
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' check-for-staged-changes true
-zstyle ':vcs_info:git*+set-message:*' hooks git-st
+zstyle ':vcs_info:git*+set-message:*' hooks git-st git-branch
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 
@@ -74,6 +74,7 @@ zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SU
 zstyle ':completion:*:descriptions' format "- %d -"
 zstyle ':completion:*:corrections' format "- %d - (errors %e})"
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections true
@@ -125,6 +126,21 @@ man() {
 	MANPAGER='less -s -M +Gg' \
     man "$@"
 }
+
+function gifo() { git-foresta --style=10 --graph-symbol-overpass=━ "$@" | less -RSX }
+function gifa() { git-foresta --all --style=10 --graph-symbol-overpass=━ "$@" | less -RSX }
+compdef _git gifo=git-log
+compdef _git gifa=git-log
+
+# Show different symbol for branch and detached head
+function +vi-git-branch() {
+	if [[ -z $(git symbolic-ref HEAD 2>/dev/null) ]]; then
+		hook_com[branch]="%F{4} %f${hook_com[branch]}"
+	else
+		hook_com[branch]="%F{4}%f${hook_com[branch]}"
+	fi
+}
+
 
 # Show remote ref name and number of commits ahead-of or behind
 function +vi-git-st() {
