@@ -35,6 +35,7 @@ ForwardX11Trusted yes
 Compression yes
 
 host gw.get.ole-k.net
+ForwardAgent yes
 user ochagenes
 hostname get.ole-k.net
 port 2222
