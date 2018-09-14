@@ -21,6 +21,10 @@ if [[ -d ~/python/bin ]] ; then
 	path=(~/python/bin $path)
 fi
 
+if [[ -d ~/local/bin ]] ; then
+	path=(~/local/bin $path)
+fi
+
 if [[ -f ~/dotfiles/256term.sh ]] ; then
 	emulate sh -c 'source ~/dotfiles/256term.sh'
 fi
