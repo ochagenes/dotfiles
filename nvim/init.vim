@@ -115,6 +115,13 @@ augroup cline
     au WinEnter,InsertLeave * set cursorline
 augroup END
 
+" Only show relative numbers in active buffer
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained * set relativenumber
+  autocmd BufLeave,FocusLost * set norelativenumber
+augroup END
+
 " Enable Conceal
 set conceallevel=2
 " highlight Conceal guifg=LawnGreen guibg=Gray22
