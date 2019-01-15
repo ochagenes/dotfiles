@@ -42,12 +42,13 @@ set tabstop=4 "Tabs to be 4 char wide
 set noexpandtab "Indent using tab char
 set laststatus=2 "always show status bar
 set noerrorbells "Keep co-workers happy
-set number "show line numbers
+set relativenumber "show relative line numbers
 "let &showbreak = '+++> ' "Indicate linebreak
 let &showbreak = '↪ '
 set scrolloff=10 "Show 10 lines above/below cursor
 set sidescrolloff=5
 set showcmd " Visual feedback for commands
+set inccommand="split" " Live feedback for substitute
 "set display+=lastline
 set wildmenu "Completion menu
 syntax on
@@ -118,8 +119,7 @@ augroup END
 set conceallevel=2
 " highlight Conceal guifg=LawnGreen guibg=Gray22
 
-" Live feedback for substitute
-set inccommand="split"
+
 
 "=====
 " Keys
