@@ -42,7 +42,7 @@ set tabstop=4 "Tabs to be 4 char wide
 set noexpandtab "Indent using tab char
 set laststatus=2 "always show status bar
 set noerrorbells "Keep co-workers happy
-set relativenumber "show relative line numbers
+set number relativenumber "show hybrid line numbers
 "let &showbreak = '+++> ' "Indicate linebreak
 let &showbreak = '↪ '
 set scrolloff=10 "Show 10 lines above/below cursor
