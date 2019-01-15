@@ -27,6 +27,7 @@ Plug 'ehamberg/vim-cute-python'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
+Plug 'heavenshell/vim-pydocstring'
 
 " Initialize plugin system
 call plug#end()
@@ -56,7 +57,7 @@ filetype plugin indent on
 
 "change background color beyond 80 char
 " let &colorcolumn=join(range(81,81),",")
-set colorcolumn=+1
+" set colorcolumn=+1
 "colorscheme solarized
 set bg=dark
 
@@ -116,6 +117,9 @@ augroup END
 " Enable Conceal
 set conceallevel=2
 " highlight Conceal guifg=LawnGreen guibg=Gray22
+
+" Live feedback for substitute
+set inccommand="split"
 
 "=====
 " Keys
