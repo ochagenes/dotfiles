@@ -187,7 +187,7 @@ let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
 
 " vimtex
 let g:tex_flavor = 'latex'
-let g:vimtex_compiler_progname = '~/.local/bin/nvr'
+let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_compiler_latexmk = {
     \ 'backend' : 'nvim',
     \ 'background' : 1,
