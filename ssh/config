@@ -44,3 +44,11 @@ host rosa.hagenes-it.no rosa
 user ochagenes
 hostname lynet.hagenes-it.no
 port 222
+
+host golin.hagenes-it.no
+user ochagenes
+hostname lynet.hagenes-it.no
+port 2224
+
+host rtendo
+hostname 158.36.98.161
