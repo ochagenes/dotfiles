@@ -9,12 +9,20 @@ if [[ -e /usr/bin/ksshaskpass ]] ; then
 	export SSH_ASKPASS="/usr/bin/ksshaskpass"
 fi
 
+if [[ -d /snap/bin ]] ; then
+	path=(/snap/bin $path)
+fi
+
 if [[ -d /snacks/bin ]] ; then
 	path=(/snacks/bin $path)
 fi
 
 if [[ -d ~/.local/bin ]] ; then
 	path=(~/.local/bin $path)
+fi
+
+if [[ -d ~/.emacs.d/bin ]] ; then
+	path=(~/.emacs.d/bin $path)
 fi
 
 if [[ -d ~/bin ]] ; then
