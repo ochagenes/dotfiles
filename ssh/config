@@ -6,16 +6,8 @@ ControlPath ~/.ssh/%r@%h:%p
 Host gw
 Hostname gw.hagenes-it.lan
 
-Host 10.50.50.10
-User vi-admin
 
-Host blaaman.get
-ForwardX11 yes
-
-host nl.wibla.net
-user ochagenes
-
-host login login.ifi login.uio.no login.ifi.uio.no ssh ssh.uio.no ulrik ulrik.uio.no rh7login.ifi.uio.no vetur vetur.ifi.uio.no vor vor.ifi.uio.no
+host *.uio.no
 user ochagene
 ForwardX11 yes
 ForwardX11Trusted yes
@@ -28,7 +20,7 @@ ForwardX11 yes
 ForwardX11Trusted yes
 Compression yes
 
-host get.ole-k.net fagerlin
+host get.ole-k.net fagerlin.hagenes-it.no
 user ochagenes
 ForwardX11 yes
 ForwardX11Trusted yes
@@ -48,7 +40,12 @@ port 222
 host golin.hagenes-it.no
 user ochagenes
 hostname lynet.hagenes-it.no
+ForwardX11 yes
+ForwardX11Trusted yes
 port 2224
 
 host rtendo
 hostname 158.36.98.161
+
+host *.lan
+Compression no
