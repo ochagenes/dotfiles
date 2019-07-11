@@ -12,8 +12,9 @@
       doom-modeline-buffer-encoding 'nil
       doom-modeline-lsp t)
 
-(setq python-shell-interpreter "python3"
-      flycheck-python-pycompile-executable "python3")
+(setq python-shell-interpreter "python3")
+(defvaralias 'flycheck-python-flake8-executable 'python-shell-interpreter)
+(setq flycheck-python-pycompile-executable 'python-shell-interpreter)
 
 (projectile-add-known-project "~/work/augere-tagging")
 (projectile-add-known-project "~/work/nuc-software")
