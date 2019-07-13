@@ -30,11 +30,15 @@ Xterm*cursorColor: gray
 
 !xterm.Font: -misc-fixed-medium-r-normal-*-*-110-*-*-c-*-iso8859-1
 !xterm*boldMode: false
+XTerm*faceName: Source Code pro:size=12:antialias=true
+!XTerm*faceSize: 12
+!XTerm.vt100.font: 7x13
 xterm*background: black
 xterm*foreground: gray
 xterm.SimpleMenu*background:  #c5c2c5
 xterm.SimpleMenu*foreground:  #000000
-
+XTerm*metaSendsEscape: true
+XTerm*scrollBar: false
 !aterm*shading:40
 !aterm*background:Black
 !aterm*foreground:gray
