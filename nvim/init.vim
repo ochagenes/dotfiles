@@ -48,13 +48,14 @@ let &showbreak = '↪ '
 set scrolloff=10 "Show 10 lines above/below cursor
 set sidescrolloff=5
 set showcmd " Visual feedback for commands
-set inccommand="split" " Live feedback for substitute
+set inccommand=split " Live feedback for substitute
 "set display+=lastline
 set wildmenu "Completion menu
 syntax on
 "filetype on
 filetype plugin indent on
-
+" Spellcheck tex files
+au BufRead *.tex setlocal spell
 
 "change background color beyond 80 char
 " let &colorcolumn=join(range(81,81),",")
@@ -185,6 +186,8 @@ let g:airline#extensions#ctrlspace#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0  " Dont lint on opening files
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
