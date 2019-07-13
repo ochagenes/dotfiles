@@ -12,13 +12,7 @@ user ochagene
 ForwardX11 yes
 ForwardX11Trusted yes
 Compression yes
-
-host login7
-hostname nordur.ifi.uio.no
 user ochagene
-ForwardX11 yes
-ForwardX11Trusted yes
-Compression yes
 
 host get.ole-k.net fagerlin.hagenes-it.no
 user ochagenes
@@ -27,13 +21,12 @@ ForwardX11Trusted yes
 Compression yes
 
 host gw.get.ole-k.net
-ForwardAgent yes
-user ochagenes
 hostname get.ole-k.net
 port 2222
-
-host rosa.hagenes-it.no rosa
+ForwardAgent yes
 user ochagenes
+
+host rosa.hagenes-it.no
 hostname lynet.hagenes-it.no
 port 222
 
