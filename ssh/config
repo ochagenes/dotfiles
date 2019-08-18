@@ -27,8 +27,7 @@ ForwardAgent yes
 user ochagenes
 
 host rosa.hagenes-it.no
-hostname lynet.hagenes-it.no
-port 222
+user ole
 
 host golin.hagenes-it.no
 user ochagenes
