@@ -58,6 +58,9 @@ case $TERM in
 		preexec () { print -Pn "\e]0;@%m: $1\a" }
 esac
 
+# Tab completion
+ fpath=(~/.zsh/completion $fpath)
+
 bindkey -e
 setopt prompt_subst
 autoload -Uz compinit promptinit colors vcs_info
