@@ -1,3 +1,2 @@
-#! /bin/bash
-export SSH_ASKPASS=/usr/bin/ksshaskpass
+#!/bin/sh
 /usr/bin/ssh-add < /dev/null
