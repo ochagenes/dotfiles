@@ -1,3 +1,4 @@
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 export HISTFILE=~/.histfile
 export HISTSIZE=10000
 export SAVEHIST=10000
