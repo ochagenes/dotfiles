@@ -175,7 +175,7 @@ function +vi-git-st() {
         --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
 
     if [[ -n ${remote} ]] ; then
-		gitstatus+=("")
+		gitstatus+=("")
         # for git prior to 1.7
         # ahead=$(git rev-list origin/${hook_com[branch]}..HEAD | wc -l)
         ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
